@@ -67,6 +67,11 @@ nav a:hover {
   width: 100%;
   height: auto;
   border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.grilla img:hover{
+  transform: scale(1.03);
 }
 
 /* CTA */
