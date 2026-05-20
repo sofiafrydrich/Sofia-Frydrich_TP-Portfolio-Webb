@@ -6,11 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="rebrand.css">
+
+    <link rel="stylesheet" href="sitio.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.css">
 </head>
 
 <body>
-    <!-- HEADER -->
     <header class="seccion-nav">
         <h1 class="logo">PORTFOLIO</h1>
         <nav>
@@ -21,19 +23,36 @@
         </nav>
     </header>
     
-    <!-- SECCION REBRANDING -->
-    <section class="rebranding">
-        <h2>Rebranding</h2>
+    <section class="sitio"> 
+        <h2>Sitio Web</h2>
         <div class="grilla">
-            <img src="Imágnes-rebrand/1.png">
-            <img src="Imágnes-rebrand/3.png">
-            <img src="Imágnes-rebrand/5.png">
-            <img src="Imágnes-rebrand/6.png">
-            <img src="Imágnes-rebrand/4.png">
-            <img src="Imágnes-rebrand/2.png">
+            <a href="Imágnes-rebrand/1.png" data-fancybox="galeria">
+                <img src="Imágnes-rebrand/1.png">
+            </a>
+            <a href="Imágnes-rebrand/3.png" data-fancybox="galeria">
+                <img src="Imágenes-sitio/img3.png">
+            </a>
+            <a href="Imágnes-rebrand/5.png" data-fancybox="galeria">
+                <img src="Imágenes-sitio/img5.png">
+            </a>
+            <a href="Imágnes-rebrand/6.png" data-fancybox="galeria">
+                <img src="Imágnes-rebrand/6.png">
+            </a>
+            <a href="Imágnes-rebrand/4.png" data-fancybox="galeria">
+                <img src="Imágnes-rebrand/4.png">
+            </a>
+            <a href="Imágnes-rebrand/2.png" data-fancybox="galeria">
+                <img src="Imágnes-rebrand/2.png">
+            </a>
         </div>
     </section>
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script>
+
+    <script>
+        Fancybox.bind('[data-fancybox="galeria"]', {});
+    </script>
+
     <!-- CTA -->
     <section class="cta">
         <p class="subtitulo">¿NECESITAS UN DISEÑADOR?</p>
@@ -49,5 +68,6 @@
         </div>
         <p class="footer">Diseñado con ♥ by Sofia Frydrich</p>
     </section>
-    
+
 </body>
+</html>
