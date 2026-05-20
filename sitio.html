@@ -52,21 +52,22 @@
     <section class="xd">
         <div class= "no">
 
-            <a data-fancybox="gallery" href="Imágenes-sitio/img4.png">
+            <a data-fancybox="galeria" href="Imágenes-sitio/img4.png">
                 <img src="Imágenes-sitio/img4.png">
             </a>
 
-            <a data-fancybox="gallery" href="Imágenes-sitio/img4.png">
+            <a data-fancybox="galeria" href="Imágenes-sitio/img4.png">
                 <img src="Imágenes-sitio/img4.png">
             </a>
 
-            <a data-fancybox="gallery" href="Imágenes-sitio/img4.png">
+            <a data-fancybox="galeria" href="Imágenes-sitio/img4.png">
                 <img src="Imágenes-sitio/img4.png">
             </a>
 
-            <a data-fancybox="gallery" href="Imágenes-sitio/img4.png">
+            <a data-fancybox="galeria" href="Imágenes-sitio/img4.png">
                 <img src="Imágenes-sitio/img4.png">
             </a>
+
 
         </div>
     </section>
@@ -77,23 +78,33 @@
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script>
 
     <script>
-        Fancybox.bind('[data-fancybox="galeria"]', {});
-        Fancybox.bind("[data-fancybox]", {
+        /* GALERIA NORMAL */
+        Fancybox.bind("[data-fancybox='normal']", {
             animated: true,
             showClass: "fancybox-fadeIn",
             hideClass: "fancybox-fadeOut",
-            
-            Carousel: {
-                transition: "slide",
-            },
-            
-            Images: {
-                zoom: false,
-            }
         });
-
+        
+        /* GALERIA CREATIVE */
+        Fancybox.bind("[data-fancybox='galeria']", {
+        
+            animated: true,
+        
+            showClass: "fancybox-zoomIn",
+            hideClass: "fancybox-zoomOut",
+        
+            Carousel: {
+                transition: "classic",
+            },
+        
+            Images: {
+                Panzoom: {
+                    maxScale: 1,
+                },
+            }
+        
+        });
     </script>
-    
 
 
     <!-- CTA -->
