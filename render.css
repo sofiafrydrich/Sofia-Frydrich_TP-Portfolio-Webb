@@ -9,10 +9,11 @@
 
 /* HEADER */
 .seccion-nav {
-  position: fixed;
+  position: relative;
+  z-index: 1000;
   top: 0;
   width: 100%;
-  height: 80px; /* definí una altura fija */
+  height: 80px; 
 }
 header {
   display: flex;
