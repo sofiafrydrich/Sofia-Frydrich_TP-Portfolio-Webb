@@ -11,6 +11,37 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.css">
 
+
+    <!-- prueba -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/carousel/carousel.css"
+    />
+    <style>
+      #myCarousel {
+        --f-carousel-slide-width: min(50%, 240px);
+        background: black;
+      }
+
+      #myCarousel .f-carousel__slide p {
+        padding: 40px 0;
+        perspective: 400px;
+        overflow: hidden;
+      }
+
+      #myCarousel .f-carousel__slide img {
+        transform: translateZ(var(--f-translateZ, 0))
+          rotateY(var(--f-rotateY, 0)) scale(var(--f-scale, 1));
+        transform-style: preserve-3d;
+
+        max-width: 100%;
+        max-height: 100%;
+        height: auto;
+
+        object-fit: cover;
+        border-radius: 24px;
+      }
+    </style>
+    <!-- prueba -->   
+
 </head>
 
 <body>
@@ -47,14 +78,117 @@
             </a>
         </div>
     </section>
+
+
+    <!-- prueba -->
+    <div class="f-carousel" id="myCarousel">
+        <div class="f-carousel__viewport">
+          <div class="f-carousel__slide">
+            <p>
+              <img
+                data-carousel-go-to="0"
+                data-lazy-src="https://lipsum.app/id/45/420x630"
+                width="420"
+                height="630"
+                alt="Image #1"
+              />
+            </p>
+          </div>
+          <div class="f-carousel__slide">
+            <p>
+              <img
+                data-carousel-go-to="1"
+                data-lazy-src="https://lipsum.app/id/46/420x630"
+                width="420"
+                height="630"
+                alt="Image #2"
+              />
+            </p>
+          </div>
+          <div class="f-carousel__slide">
+            <p>
+              <img
+                data-carousel-go-to="2"
+                data-lazy-src="https://lipsum.app/id/47/420x630"
+                width="420"
+                height="630"
+                alt="Image #3"
+              />
+            </p>
+          </div>
+          <div class="f-carousel__slide">
+            <p>
+              <img
+                data-carousel-go-to="3"
+                data-lazy-src="https://lipsum.app/id/48/420x630"
+                width="420"
+                height="630"
+                alt="Image #4"
+              />
+            </p>
+          </div>
+          <div class="f-carousel__slide">
+            <p>
+              <img
+                data-carousel-go-to="4"
+                data-lazy-src="https://lipsum.app/id/49/420x630"
+                width="420"
+                height="630"
+                alt="Image #5"
+              />
+            </p>
+          </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/carousel/carousel.umd.js"></script>
+      
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/utils/map.umd.js"></script>
+      
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/carousel/carousel.lazyload.umd.js"></script>
+
+    <script>
+      Carousel(
+        document.getElementById("myCarousel"),
+        {
+          slidesPerPage: 1,
+          on: {
+            render: (instance, slides) => {
+              for (const slide of slides) {
+                const rawProgress = instance.getPageProgress(slide.index);
+                const progress = Math.abs(
+                  Math.max(-1, Math.min(1, rawProgress))
+                );
+
+                const rotateY = map(rawProgress, 0, 1, 0, 30);
+                const translateZ = map(progress, 0, 1, 0, -250);
+                const scale = map(progress, 0, 1, 1, 1.4);
+
+                slide.el?.style.setProperty(
+                  "--f-translateZ",
+                  `${translateZ}px`
+                );
+                slide.el?.style.setProperty("--f-rotateY", `${rotateY}deg`);
+                slide.el?.style.setProperty("--f-scale", `${scale}`);
+              }
+            },
+          },
+        },
+        {
+          Lazyload,
+        }
+      ).init();
+    </script>
+    <!-- prueba -->
+
     
-    
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script>
-    
+
     <script>
       /* GALERIA NORMAL */
       Fancybox.bind('[data-fancybox="galeria"]', {});
     </script>
+
+
 
 
     <!-- CTA -->
