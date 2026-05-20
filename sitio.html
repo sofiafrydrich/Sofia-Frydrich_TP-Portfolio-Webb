@@ -51,21 +51,23 @@
 
     <section class="xd">
         <div class= "no">
+
             <a data-fancybox="gallery" href="Imágenes-sitio/img4.png">
-                <img src="img/foto.jpg" alt="">
+                <img src="Imágenes-sitio/img4.png">
             </a>
-        
+
             <a data-fancybox="gallery" href="Imágenes-sitio/img4.png">
-                <img src="img/foto.jpg" alt="">
+                <img src="Imágenes-sitio/img4.png">
             </a>
-        
+
             <a data-fancybox="gallery" href="Imágenes-sitio/img4.png">
-                <img src="img/foto.jpg" alt="">
+                <img src="Imágenes-sitio/img4.png">
             </a>
-        
+
             <a data-fancybox="gallery" href="Imágenes-sitio/img4.png">
-                <img src="img/foto.jpg" alt="">
+                <img src="Imágenes-sitio/img4.png">
             </a>
+
         </div>
     </section>
 
@@ -76,16 +78,22 @@
 
     <script>
         Fancybox.bind('[data-fancybox="galeria"]', {});
+        Fancybox.bind("[data-fancybox]", {
+            animated: true,
+            showClass: "fancybox-fadeIn",
+            hideClass: "fancybox-fadeOut",
+            
+            Carousel: {
+                transition: "slide",
+            },
+            
+            Images: {
+                zoom: false,
+            }
+        });
+
     </script>
     
-    <script>
-     Fancybox.bind("[data-fancybox]", {
-        animated: true,
-        showClass: "fancybox-fadeIn",
-        hideClass: "fancybox-fadeOut",
-        });
-    </script>
-
 
 
     <!-- CTA -->
