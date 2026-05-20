@@ -57,6 +57,7 @@ nav a:hover {
   margin-bottom: 20px;
   margin-top: 80px;
 }
+
 /* Grilla */
 .grilla {
   display: grid;
@@ -67,7 +68,14 @@ nav a:hover {
   width: 100%;
   height: auto;
   border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
 }
+.grilla img:hover{
+  transform: scale(1.03);
+}
+
+
 
 /* CTA */
 .cta {
