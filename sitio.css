@@ -76,6 +76,21 @@ nav a:hover {
 }
 
 
+.fancybox__container {
+  --fancybox-bg: rgba(24, 24, 27, 0.95);
+}
+
+.fancybox__content img {
+  border-radius: 25px;
+  transform: scale(0.9) rotate(-2deg);
+  transition: 0.4s ease;
+}
+
+.fancybox__slide.is-selected .fancybox__content img {
+  transform: scale(1) rotate(0deg);
+}
+
+
 /* CTA */
 .cta {
   text-align: center;
